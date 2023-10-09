@@ -1,14 +1,11 @@
-package com.syg.webfluxdemo;
+package com.syg.webfluxdemo.webclient;
 
 import com.syg.webfluxdemo.dto.InputFailedValidationResponse;
 import com.syg.webfluxdemo.dto.Response;
-import com.syg.webfluxdemo.exception.InputValidationException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 

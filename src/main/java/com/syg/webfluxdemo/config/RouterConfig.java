@@ -18,6 +18,13 @@ public class RouterConfig {
 
     @Autowired
     private RequestHandler requestHandler;
+
+    @Bean
+    public RouterFunction<ServerResponse> highLevelRouter(){
+        return RouterFunctions.route()
+                .path("router", this::serverResponseRouterFunction)
+                .build();
+    }
     @Bean
     public RouterFunction<ServerResponse> serverResponseRouterFunction1() {
         return RouterFunctions.route()

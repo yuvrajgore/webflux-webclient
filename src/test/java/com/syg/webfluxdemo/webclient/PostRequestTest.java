@@ -1,4 +1,4 @@
-package com.syg.webfluxdemo;
+package com.syg.webfluxdemo.webclient;
 
 import com.syg.webfluxdemo.dto.MultiplayRequest;
 import com.syg.webfluxdemo.dto.Response;
@@ -8,17 +8,17 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-public class HeaderTest extends BaseTests{
+public class PostRequestTest extends BaseTests{
+
     @Autowired
     private WebClient webClient;
 
     @Test
-    public void headersTest() {
+    public void postTest() {
         Mono<Response> responseMono = this.webClient
                 .post()
                 .uri("reactiveMath/multiply")
                 .bodyValue(buildRequestDto(5, 2))
-                .headers(h -> h.set("testKey", "testValue"))
                 .retrieve()
                 .bodyToMono(Response.class)
                 .doOnNext(System.out::println);

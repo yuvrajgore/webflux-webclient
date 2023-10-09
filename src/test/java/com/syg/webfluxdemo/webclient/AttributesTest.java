@@ -1,4 +1,4 @@
-package com.syg.webfluxdemo;
+package com.syg.webfluxdemo.webclient;
 
 import com.syg.webfluxdemo.dto.MultiplayRequest;
 import com.syg.webfluxdemo.dto.Response;
